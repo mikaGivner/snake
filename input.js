@@ -3,9 +3,6 @@ let lastInputDirection = { x: 0, y: 0 };
 
 let up = 4;
 
-// window.addEventListener("click", (l) => {
-//   console.log(l);
-// });
 window.addEventListener("touchstart", function () {
   if (up === 1) up = 2;
   else if (up === 2) up = 3;
