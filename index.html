@@ -14,6 +14,7 @@
         justify-content: center;
         margin: 0;
         background: #e4e4e4;
+        position: relative;
       }
       #game-board {
         background: #000;
@@ -34,9 +35,38 @@
         background: palevioletred;
         border: 0.25vmin solid #fff;
       }
+      .btn {
+        position: absolute;
+        background-color: red;
+        z-index: 100;
+      }
+      #btnUp {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      #btnDown {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+      }
+      #btnLeft {
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+      }
+      #btnRight {
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+      }
     </style>
   </head>
   <body>
+    <!-- <input type="checkbox" value="up" class="btn" id="btnUp" />
+    <input type="checkbox" value="down" class="btn" id="btnDown" />
+    <input type="checkbox" value="left" class="btn" id="btnLeft" />
+    <input type="checkbox" value="right" class="btn" id="btnRight" /> -->
     <div id="game-board"></div>
   </body>
   <script src="./game.js" defer type="module"></script>
