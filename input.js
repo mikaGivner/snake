@@ -1,16 +1,35 @@
 let inputDirection = { x: 0, y: 0 };
 let lastInputDirection = { x: 0, y: 0 };
 
-let up = document.querySelector("#btnUp");
-let down = document.querySelector("#btnDown");
-let left = document.querySelector("#btnLeft");
-let right = document.querySelector("#btnRight");
+let up = 4;
 
 // window.addEventListener("click", (l) => {
 //   console.log(l);
 // });
-window.addEventListener("touchmove", (l) => {
-  console.log(l);
+window.addEventListener("touchstart", function () {
+  if (up === 1) up = 2;
+  else if (up === 2) up = 3;
+  else if (up === 3) up = 4;
+  else if (up === 4) up = 1;
+
+  switch (up) {
+    case 1:
+      if (lastInputDirection.y !== 0) break;
+      inputDirection = { x: 0, y: -1 };
+      break;
+    case 3:
+      if (lastInputDirection.y !== 0) break;
+      inputDirection = { x: 0, y: 1 };
+      break;
+    case 4:
+      if (lastInputDirection.x !== 0) break;
+      inputDirection = { x: -1, y: 0 };
+      break;
+    case 2:
+      if (lastInputDirection.x !== 0) break;
+      inputDirection = { x: 1, y: 0 };
+      break;
+  }
 });
 
 window.addEventListener("keydown", (e) => {
